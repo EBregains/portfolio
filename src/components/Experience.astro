@@ -1,0 +1,42 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Marzo 2022 – Actualidad",
+    title: "Desarrollo Web Fullstack",
+    company: "Freelance",
+    description:
+      "Construyendo y diseñando páginas web. Comenzando por el diseño y el analisis de las tecnologías adecuadas para cada caso. Llevando a cabo su desarrollo con tests continuos. Haciendo deploys de las mismas en la nube, comprando y asignando dominios. Garantizando su rendimiento y monitorizando su posterior performance para brindar el mejor producto posible.",
+    active: true,
+  },
+  {
+    date: "Septiembre 2023 – Actualidad",
+    title: "Diseñador de Interfaces HMI y SCADA",
+    company: "A.G.P. SRL",
+    description:
+      "Encargado de diseñar e implementar interfaces para paneles táctiles industriales, utilizados por operarios en planta. Dichos paneles controlan, a través de Controladores Lógicos Programables, los procesos de producción industriales de grandes fábricas.",
+    active: true,
+  },
+  {
+    date: "Octubre 2021 – Julio 2023",
+    title: "Au Pair – Intercambio en US",
+    company: "Cultural Care",
+    description:
+      "A cargo de coordinar y acompañar niños americanos viviendo cama adentro. Lugar donde desarrollé habilidades blandas - poder de liderazgo sano, capacidad de adaptación a diferentes ambientes, empatía y pedagogía - y donde conseguí un manejo del inglés nativo.",
+    link: "https://www.culturalcare.com.ar/se-una-au-pair/funciones-y-responsabilidades",
+  },
+];
+---
+
+<ol
+  class=`relative border-s-2 border-gray-200/50 dark:border-gray-700 pl-4 ${Astro.props.class}`
+>
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

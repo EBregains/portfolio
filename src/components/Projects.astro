@@ -1,0 +1,98 @@
+---
+import NextJS from "@/icons/NextJS.astro";
+import ReactJS from "@/icons/ReactJS.astro";
+import Tailwind from "@/icons/Tailwind.astro";
+import CSS from "@/icons/CSS.astro";
+import Image from "astro/components/Image.astro";
+import GitHub from "@/icons/GitHub.astro";
+import LinkButton from "./LinkButton.astro";
+import Link from "@/icons/Link.astro";
+
+const TAGS = {
+  CSS: {
+    name: "CSS",
+    class: "bg-[#0c73b8]/50 text-white",
+    icon: CSS,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-[#00D8FF]/50 text-white",
+    icon: ReactJS,
+  },
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Get Things Done",
+    subtitle: "To Do Tracker",
+    description:
+      "Lista de tareas sencilla y directa con la que trabajar, especialmente para las tareas del día.",
+    link: "https://ebregains.github.io/get-things-done/",
+    github: "https://github.com/EBregains/get-things-done",
+    image: {
+      url: "/projects/get-things-done/image.webp",
+      alt: "Sample image of the project GetThingsDone",
+    },
+    tags: [TAGS.CSS, TAGS.REACT],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(
+      ({ title, subtitle, description, link, github, image, tags }) => (
+        <article class="flex flex-col lg:flex-row gap-6 max-w-">
+          <Image
+            class="rounded shadow-2xl w-full lg:w-1/2 shadow-white/10"
+            src={image.url}
+            alt={image.alt}
+            width="300"
+            height="200"
+          />
+          <div>
+            <h3 class="text-4xl font-semibold text-pink-600">{title}</h3>
+            <h4 class="text-2xl mb-2">{subtitle}</h4>
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-lg opacity-80">{description}</p>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </article>
+      ),
+    )
+  }
+</div>
