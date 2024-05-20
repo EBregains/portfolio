@@ -7,16 +7,17 @@ import Image from "astro/components/Image.astro";
 import GitHub from "@/icons/GitHub.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "@/icons/Link.astro";
+import Mongo from "@/icons/Mongo.astro";
 
 const TAGS = {
   CSS: {
     name: "CSS",
-    class: "bg-[#0c73b8]/50 text-white",
+    class: "bg-[#073d65] text-white",
     icon: CSS,
   },
   REACT: {
     name: "React.js",
-    class: "bg-[#00D8FF]/50 text-white",
+    class: "bg-[#016f89] text-white",
     icon: ReactJS,
   },
   NEXT: {
@@ -29,11 +30,30 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-[#02793b] text-white",
+    icon: Mongo,
+  },
 };
 
 const PROJECTS = [
   {
+    title: "Odriozola Manager",
+    color: "text-amber-600",
+    subtitle: "Sistema de consultas y guardado.",
+    description:
+      "Base de datos interactiva, donde un taller de reparaciones de motores eléctricos almacena y utiliza informacion de sus trabajos y clientes.",
+    github: "https://github.com/EBregains/bobinados-motores",
+    image: {
+      url: "/projects/odriozola-manager/image.webp",
+      alt: "Sample of Odriozola Project, where there is a table with engines' data. On top of it, filters to make you able to sort and filter the items",
+    },
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGO],
+  },
+  {
     title: "Get Things Done",
+    color: "text-pink-600",
     subtitle: "To Do Tracker",
     description:
       "Lista de tareas sencilla y directa con la que trabajar, especialmente para las tareas del día.",
@@ -41,7 +61,7 @@ const PROJECTS = [
     github: "https://github.com/EBregains/get-things-done",
     image: {
       url: "/projects/get-things-done/image.webp",
-      alt: "Sample image of the project GetThingsDone",
+      alt: "Sample of the project GetThingsDone",
     },
     tags: [TAGS.CSS, TAGS.REACT],
   },
@@ -51,17 +71,17 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(
-      ({ title, subtitle, description, link, github, image, tags }) => (
-        <article class="flex flex-col lg:flex-row gap-6 max-w-">
+      ({ title, color, subtitle, description, link, github, image, tags }) => (
+        <article class="flex flex-col lg:flex-row gap-6 hover:scale-105 transition-transform">
           <Image
-            class="rounded shadow-2xl w-full lg:w-1/2 shadow-white/10"
+            class="rounded shadow-2xl w-full lg:w-1/2 dark:shadow-white/10"
             src={image.url}
             alt={image.alt}
             width="300"
             height="200"
           />
           <div>
-            <h3 class="text-4xl font-semibold text-pink-600">{title}</h3>
+            <h3 class={`text-4xl font-semibold ${color}`}>{title}</h3>
             <h4 class="text-2xl mb-2">{subtitle}</h4>
             <ul class="flex flex-row mb-2 gap-x-2">
               {tags.map((tag) => (
