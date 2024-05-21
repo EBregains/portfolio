@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import picture from "@/images/profile_picture.webp";
+---
+
+<div
+  class="flex gap-y-12 gap-x-4 flex-col-reverse items-center justify-center lg:flex-row pt-4"
+>
+  <div class="text-lg text-pretty flex flex-col gap-y-4">
+    <p>
+      Apasionado y autodidacta del mundo del software, amante del aprendizaje y
+      la resolución de problemas. Con enfoque comprensivo y auténtico, busco
+      abordar desafíos de manera efectiva y colaborar en equipos
+      multidisciplinarios.
+    </p>
+    <p>
+      Actualmente estoy aprendiendo aleman y noruego, en busca de crecimiento
+      personal y apertura a nuevas culturas y experiencias.
+    </p>
+    <p>
+      Mi naturaleza alegre y resolutiva, combinada con una mente creativa, me
+      impulsa a encontrar soluciones innovadoras y eficientes.
+    </p>
+  </div>
+  <div class="flex w-full justify-center group">
+    <Image
+      src={picture}
+      alt="Emiliano Bregains. He is in a mountain, above the clouds. the background is only sky."
+      class="relative size-72 rounded-lg dark:shadow-white/15 rotate-6 border-4 p-4 border-purple-200/70 z-30 bg-black group-hover:rotate-[4deg] transition-all"
+      width={300}
+      height={300}
+    />
+    <div
+      class="absolute size-72 border-4 z-20 rounded-lg border-purple-200/40 group-hover:-rotate-2 transition-all group-hover:scale-95"
+    >
+    </div>
+    <div
+      class="absolute size-72 -rotate-6 border-4 z-20 rounded-lg border-purple-200/10 group-hover:-rotate-[9deg] transition-all group-hover:scale-90"
+    >
+    </div>
+  </div>
+</div>
