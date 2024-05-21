@@ -8,6 +8,7 @@ import GitHub from "@/icons/GitHub.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "@/icons/Link.astro";
 import Mongo from "@/icons/Mongo.astro";
+import Svelte from "@/icons/Svelte.astro";
 
 const TAGS = {
   CSS: {
@@ -30,6 +31,11 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  SVELTE: {
+    name: "Svelte",
+    class: "bg-[#cc3100] text-white",
+    icon: Svelte,
+  },
   MONGO: {
     name: "MongoDB",
     class: "bg-[#02793b] text-white",
@@ -40,7 +46,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Odriozola Manager",
-    color: "text-amber-600",
+    color: "text-stone-600 dark:text-stone-400",
     subtitle: "Sistema de consultas y guardado.",
     description:
       "Base de datos interactiva, donde un taller de reparaciones de motores eléctricos almacena y utiliza informacion de sus trabajos y clientes.",
@@ -50,6 +56,20 @@ const PROJECTS = [
       alt: "Sample of Odriozola Project, where there is a table with engines' data. On top of it, filters to make you able to sort and filter the items",
     },
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.MONGO],
+  },
+  {
+    title: "Odriozola Landing",
+    color: "text-amber-600",
+    subtitle: "Landing Page",
+    description:
+      "Landing page para un taller de reparaciones de motores eléctricos. Otorgandole visibilidad y destacandola en la competencia",
+    link: "https://electromecanicaodriozola.com",
+    github: "https://github.com/EBregains/taller",
+    image: {
+      url: "/projects/odriozola-landing/image.webp",
+      alt: "Sample of Odriozola Landing Page, where one can see three open engines with their wiring inside. Next to three cable coils.",
+    },
+    tags: [TAGS.CSS, TAGS.SVELTE],
   },
   {
     title: "Get Things Done",
