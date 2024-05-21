@@ -55,4 +55,18 @@ const { title, description } = Astro.props;
       scroll-behavior: none;
     }
   }
+
+  @supports selector(::-webkit-scrollbar) {
+    ::-webkit-scrollbar-thumb {
+      background: #fddf4797;
+      border-radius: 2px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar {
+      max-width: 4px;
+      max-height: 4px;
+    }
+  }
 </style>
