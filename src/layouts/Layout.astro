@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import "@fontsource-variable/onest";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -19,7 +20,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
+    <ViewTransitions />
     <title>{title}</title>
   </head>
   <body class="relative text-black/90 dark:text-white">
@@ -32,41 +33,41 @@ const { title, description } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <style is:global>
+      :root {
+        color-scheme: dark light;
+      }
+      html {
+        font-family: "Onest Variable", system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #090909;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 100vh;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: none;
+        }
+      }
+
+      @supports selector(::-webkit-scrollbar) {
+        ::-webkit-scrollbar-thumb {
+          background: #fddf4797;
+          border-radius: 2px;
+        }
+        ::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        ::-webkit-scrollbar {
+          max-width: 4px;
+          max-height: 4px;
+        }
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  :root {
-    color-scheme: dark light;
-  }
-  html {
-    font-family: "Onest Variable", system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
-  body {
-    background: #090909;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 100vh;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: none;
-    }
-  }
-
-  @supports selector(::-webkit-scrollbar) {
-    ::-webkit-scrollbar-thumb {
-      background: #fddf4797;
-      border-radius: 2px;
-    }
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    ::-webkit-scrollbar {
-      max-width: 4px;
-      max-height: 4px;
-    }
-  }
-</style>
