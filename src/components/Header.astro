@@ -1,15 +1,111 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+
+const LINKS = [
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "https://www.linkedin.com/in/ebregains/",
+  },
+];
 ---
 
-<header
-  class="flex justify-evenly items-center py-5 w-full lg:w-[980px] mx-auto"
->
-  <nav class="flex flex-col md:flex-row lg:gap-x-10 opacity-80">
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Projectos</a>
-    <a href="#sobre-mi">Sobre mi</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  <ThemeToggle />
+<header class="sticky top-0 sm:top-4 m-0 sm:m-4 rounded-lg z-50">
+  <div
+    class="flex justify-between items-center px-5 py-2 w-full xl:px-0 lg:w-[980px] mx-auto"
+  >
+    <nav class="flex flex-col gap-x-4 py-1 sm:flex-row lg:gap-x-10">
+      {
+        LINKS.map((link) => (
+          <>
+            <a
+              class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400"
+              aria-label={link.label}
+              href={link.url}
+            >
+              {link.title}
+            </a>
+          </>
+        ))
+      }
+    </nav>
+    <ThemeToggle />
+  </div>
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header div nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-yellow-500");
+              item.classList.add("dark:text-yellow-500");
+              item.classList.add("font-semibold");
+              item.classList.add("text-xl");
+            } else {
+              item.classList.remove("text-yellow-500");
+              item.classList.remove("dark:text-yellow-500");
+              item.classList.remove("font-semibold");
+              item.classList.remove("text-xl");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
+
+<style>
+  header {
+    animation: blur-bg 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 300px;
+  }
+
+  @keyframes blur-bg {
+    to {
+      @apply backdrop-blur-xl bg-black/10 shadow-lg;
+    }
+  }
+</style>
