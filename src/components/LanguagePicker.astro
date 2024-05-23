@@ -1,0 +1,67 @@
+---
+import Info from "@/icons/Info.astro";
+import { LANGUAGES } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const currentLocaleData = LANGUAGES[lang];
+const otherLocales = Object.values(LANGUAGES).filter(
+  (locale) => locale.code !== lang,
+);
+---
+
+<div class="relative inline-flex items-center text-left fade-in">
+  {
+    currentLocaleData.code === "de" && (
+      <div class="group px-2">
+        <Info class="w-4" />
+        <div class=" whitespace-no-wrap absolute -left-14 z-10 px-3 py-2 text-xs w-36 text-center text-white bg-gray-700  rounded-lg shadow-sm hidden dark:bg-gray-700 group-hover:block ">
+          I used translations tools to help me with this language
+        </div>
+      </div>
+    )
+  }
+  <div
+    class="group text-black rounded-md w-28 text-sm dark:text-white transition-all"
+  >
+    <button
+      type="button"
+      class="inline-flex justify-start items-center w-full gap-x-2 px-3 py-1"
+      aria-expanded="true"
+      aria-haspopup="true"
+    >
+      <currentLocaleData.flag />
+      {currentLocaleData.name}
+    </button>
+    <ul
+      class="group-hover:block group-hover:animate-fade-down group-hover:animate-duration-200 hidden text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md absolute w-full"
+    >
+      {
+        otherLocales.map((locale) => (
+          <li class="py-[2px]">
+            <a
+              class="whitespace-no-wrap inline-flex justify-start items-center px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm w-full gap-x-2"
+              href={`/${locale.code}`}
+            >
+              <locale.flag /> {locale.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .fade-in {
+    animation: fade-in 1s linear 0.5s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
