@@ -1,0 +1,24 @@
+import norwegian from '@/i18n/no.json';
+import deutsch from '@/i18n/de.json';
+import english from '@/i18n/en.json';
+import spanish from '@/i18n/es.json';
+
+const LANG = {
+  DEUTSCH: 'de',
+  NORWEGIAN: 'no',
+  ENGLISH: 'en',
+  SPANISH: 'es',
+};
+
+export const getI18N = ({
+  currentLocale = 'es',
+}: {
+  currentLocale: string | undefined;
+}) => {
+  if (currentLocale === LANG.NORWEGIAN) return { ...spanish, ...norwegian };
+  if (currentLocale === LANG.ENGLISH) return { ...spanish, ...english };
+  if (currentLocale === LANG.DEUTSCH) return { ...spanish, ...deutsch };
+  console.log('ups');
+  return spanish;
+
+};
