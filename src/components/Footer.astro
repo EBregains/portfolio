@@ -1,5 +1,10 @@
 ---
+import { ui } from "@/i18n/ui";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Logo from "@/icons/Logo.astro";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="bg-black/5 rounded-lg shadow dark:bg-white/5 m-4 mt-12">
@@ -9,11 +14,7 @@
         href="https://www.linkedin.com/in/ebregains/"
         class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
       >
-        <!-- <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          class="h-8"
-          alt="Flowbite Logo"
-        /> -->
+        <Logo class="h-8 w-auto" />
         <span
           class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
           >Emiliano <span class="text-black/50 dark:text-white/50"
@@ -22,24 +23,23 @@
         >
       </a>
       <ul
-        class="flex flex-wrap items-center mb-6 text-sm font-medium text-black/65 sm:mb-0 dark:text-white/80"
+        class="flex flex-wrap gap-y-1 flex-col sm:items-center sm:flex-row mb-6 text-sm font-medium text-black/65 sm:mb-0 dark:text-white/70"
       >
         <li>
-          <a href="#experiencia" class="hover:underline me-4 md:me-6"
-            >Experiencia</a
+          <a href="#experiencia" class="hover:underline">
+            {t(`nav.experiencia`)}</a
           >
         </li>
         <li>
-          <a href="#proyectos" class="hover:underline me-4 md:me-6">Proyectos</a
-          >
+          <a href="#proyectos" class="hover:underline">{t(`nav.proyectos`)}</a>
         </li>
         <li>
-          <a href="#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+          <a href="#sobre-mi" class="hover:underline">{t(`nav.sobre-mi`)}</a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/ebregains/"
-            class="hover:underline">Contacto</a
+            class="hover:underline">{t(`nav.contacto`)}</a
           >
         </li>
       </ul>
