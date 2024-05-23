@@ -1,5 +1,4 @@
 import Spain from '@/components/flags/Spain.astro';
-import Andorra from '@/components/flags/Andorra.astro';
 import UnitedStates from '@/components/flags/UnitedStates.astro';
 import Norway from '@/components/flags/Norway.astro';
 import Deutschland from '@/components/flags/Deutschland.astro';
