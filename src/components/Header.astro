@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import ThemeToggle from "./ThemeToggle.astro";
 import LanguagePicker from "./LanguagePicker.astro";
+import Logo from "@/icons/Logo.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,37 +12,40 @@ const t = useTranslations(lang);
   <div
     class="flex justify-between items-center px-5 py-2 w-full xl:px-0 lg:w-[980px] mx-auto"
   >
-    <nav class="flex flex-col gap-x-4 py-1 sm:flex-row lg:gap-x-10">
-      <a
-        class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400"
-        aria-label="experiencia"
-        href="#experiencia"
-      >
-        {t(`nav.experiencia`)}
-      </a>
-      <a
-        class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400"
-        aria-label="proyectos"
-        href="#proyectos"
-      >
-        {t(`nav.proyectos`)}
-      </a>
-      <a
-        class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400"
-        aria-label="sobre-mi"
-        href="#sobre-mi"
-      >
-        {t(`nav.sobre-mi`)}
-      </a>
-      <a
-        class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400"
-        aria-label="contacto"
-        href="#contacto"
-      >
-        {t(`nav.contacto`)}
-      </a>
-    </nav>
-    <div class="flex items-center gap-x-8">
+    <div class="inline-flex gap-x-1">
+      <Logo class="w-6 h-auto" />
+      <nav class="flex flex-col gap-x-4 py-1 sm:flex-row lg:gap-x-10">
+        <a
+          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in delay-100"
+          aria-label="experiencia"
+          href="#experiencia"
+        >
+          {t(`nav.experiencia`)}
+        </a>
+        <a
+          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in delay-200"
+          aria-label="proyectos"
+          href="#proyectos"
+        >
+          {t(`nav.proyectos`)}
+        </a>
+        <a
+          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in delay-300"
+          aria-label="sobre-mi"
+          href="#sobre-mi"
+        >
+          {t(`nav.sobre-mi`)}
+        </a>
+        <a
+          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in delay-400"
+          aria-label="contacto"
+          href="#contacto"
+        >
+          {t(`nav.contacto`)}
+        </a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-x-0 ssm:gap-x-8">
       <LanguagePicker />
       <ThemeToggle />
     </div>
@@ -106,6 +110,17 @@ const t = useTranslations(lang);
   @keyframes blur-bg {
     to {
       @apply backdrop-blur-xl bg-black/10 shadow-lg;
+    }
+  }
+
+  .fade-in {
+    animation: fade-in 0.5s linear forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
     }
   }
 </style>
