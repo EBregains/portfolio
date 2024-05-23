@@ -6,6 +6,10 @@ import Badge from "./Badge.astro";
 import SocialPill from "./SocialPill.astro";
 import Image from "astro/components/Image.astro";
 import Sparkles from "@/icons/Sparkles.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div
@@ -15,13 +19,13 @@ import Sparkles from "@/icons/Sparkles.astro";
     href="https://www.linkedin.com/in/ebregains/"
     target="_blank"
     rel="noopener"
-    class="flex lg:flex-col lg:flex-1 gap-4 mb-4 lg:mb-0 items-center w-auto md:hover:scale-105 transition"
+    class="flex lg:flex-col lg:flex-1 gap-4 mb-4 lg:mb-0 items-center w-max md:hover:scale-105 transition"
   >
     <div
       class="absolute ml-28 lg:mt-3 lg:ml-40 flex items-center md:justify-center md:hover:scale-105 transition"
     >
       <Badge>
-        <Sparkles class="mr-2 size-4" />Disponible!
+        <Sparkles class="mr-2 size-4" />{i18n.AVAILABLE}
       </Badge>
     </div>
     <Image
@@ -35,23 +39,20 @@ import Sparkles from "@/icons/Sparkles.astro";
   </a>
   <div class="w-full lg:w-3/5">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 flex gap-x-4">
-      Emiliano Brégains
+      {i18n.TITLE}
     </h1>
     <h2
       class="mb-4 text-xl font-semibold text-yellow-500 md:text-2xl lg:text-3xl lg:mb-5 dark:text-yellow-300"
     >
-      Desarrollador Fullstack
+      {i18n.SUBTITLE}
       <!-- <span class="text-yellow-300/70"> y más.</span> -->
     </h2>
-    <h3 class="text-base text-balance mb-6 max-w-[700px]">
-      <span>Trabajando en el rubro desde hace +2 años.</span>
+    <h3 class="text-base text-pretty mb-6 max-w-[700px] pr-2">
+      <span>{i18n["PHARAGRAPH-HERO-1"]}</span>
       <span class="text-blue-600 dark:text-blue-300/90">
-        De Santa Fe, Argentina.</span
+        {i18n["PHARAGRAPH-HERO-2"]}</span
       >
-      <span class="opacity-80">
-        Dedicado a crear productos y experiencias especiales para cada uno de
-        mis clientes.</span
-      >
+      <span class="opacity-80"> {i18n["PHARAGRAPH-HERO-3"]}</span>
     </h3>
 
     <nav class="flex gap-4 flex-wrap">
