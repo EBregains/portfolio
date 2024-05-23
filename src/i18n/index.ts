@@ -18,7 +18,6 @@ export const getI18N = ({
   if (currentLocale === LANG.NORWEGIAN) return { ...spanish, ...norwegian };
   if (currentLocale === LANG.ENGLISH) return { ...spanish, ...english };
   if (currentLocale === LANG.DEUTSCH) return { ...spanish, ...deutsch };
-  console.log('ups');
   return spanish;
 
 };
