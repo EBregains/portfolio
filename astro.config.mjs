@@ -10,6 +10,7 @@ export default defineConfig({
     locales: ['es', 'en', 'no', 'de'],
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
     }
   },
   site: 'https://emilianobregains.xyz/'
