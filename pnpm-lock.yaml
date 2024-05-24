@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.8.5)(tailwindcss@3.4.3)
+  '@fontsource-variable/dm-sans':
+    specifier: ^5.0.6
+    version: 5.0.6
   '@fontsource-variable/onest':
     specifier: ^5.0.4
     version: 5.0.4
@@ -844,6 +847,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/dm-sans@5.0.6:
+    resolution: {integrity: sha512-+CNVseJRlYGB4gUZ2L7yTeCHHBKAMVVhqUz85nb/OoU0hketJrWCHOUJwF5W2MpZCeE0JqJmDFAsEdx8znkrGw==}
+    dev: false
 
   /@fontsource-variable/onest@5.0.4:
     resolution: {integrity: sha512-AgdtsALwfkuLuL3dMCCX/ag27ho7yMKNIrkX5AKYKsPDm5u6mrTZ0LcO9jtMI7Z4ant7Huf9c2QtPdK3az/mow==}
