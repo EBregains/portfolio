@@ -22,8 +22,8 @@ const lang = getLangFromUrl(Astro.url);
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <ViewTransitions />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="relative text-black/90 dark:text-white">
     <Header />
@@ -36,9 +36,6 @@ const lang = getLangFromUrl(Astro.url);
     >
     </div>
     <style is:global>
-      :root {
-        color-scheme: dark light;
-      }
       html {
         font-family: "DM Sans Variable", system-ui, sans-serif;
         scroll-behavior: smooth;

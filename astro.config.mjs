@@ -9,7 +9,8 @@ export default defineConfig({
     defaultLocale: 'es',
     locales: ['es', 'en', 'no', 'de'],
     routing: {
-      prefixDefaultLocale: false
+      prefixDefaultLocale: true,
     }
   },
+  site: 'https://emilianobregains.xyz/'
 });
