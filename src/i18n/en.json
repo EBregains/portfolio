@@ -1,8 +1,74 @@
 {
   "TITLE": "Emiliano Brégains",
   "SUBTITLE": "Fullstack Developer",
-  "AVAILABLE": "Open to Work!",
-  "PHARAGRAPH-HERO-1": "Working as such for +2 years.",
+  "AVAILABLE": "Available!",
+  "PHARAGRAPH-HERO-1": "Working for over 2 years.",
   "PHARAGRAPH-HERO-2": "From Santa Fe, Argentina.",
-  "PHARAGRAPH-HERO-3": "Creating special products and experiences for every client."
+  "PHARAGRAPH-HERO-3": "Creating unique experiences and products for each client.",
+  "EXPERIENCE_TITLE": "Experience",
+  "EXPERIENCE": [
+    {
+      "date": "March 2022 – Present",
+      "title": "Fullstack Web Development",
+      "company": "Freelance",
+      "description": "Building and designing websites. Starting with the design and analysis of appropriate technologies for each case. Carrying out the development with continuous testing. Deploying them in the cloud, purchasing and assigning domains. Ensuring their performance and monitoring their subsequent performance to provide the best possible product.",
+      "active": true
+    },
+    {
+      "date": "September 2023 – Present",
+      "title": "HMI and SCADA Interface Design",
+      "company": "A.G.P. SRL",
+      "description": "Responsible for designing and implementing interfaces for industrial touch panels used by plant operators. These panels control industrial production processes in large factories through Programmable Logic Controllers.",
+      "active": true
+    },
+    {
+      "date": "October 2021 – July 2023",
+      "title": "Au Pair – Exchange in US",
+      "company": "Cultural Care",
+      "description": "In charge of coordinating and accompanying American children while living in. Developed soft skills such as healthy leadership, adaptability to different environments, empathy, and teaching skills, and achieved a native-level command of English.",
+      "link": "https://www.culturalcare.com.ar/se-una-au-pair/funciones-y-responsabilidades"
+    }
+  ],
+  "MORE_INFO": "More Information",
+  "PROJECTS_TITLE": "Projects",
+  "PROJECTS": [
+    {
+      "title": "Odriozola Manager",
+      "subtitle": "Query and storage system",
+      "description": "Interactive database where an electric motor repair shop stores and utilizes information about their work and clients.",
+      "github": "https://github.com/EBregains/bobinados-motores",
+      "image": {
+        "url": "/projects/odriozola-manager/image.webp",
+        "alt": "Sample of Odriozola Project, showing a table with engine data. Filters on top allow sorting and filtering the items."
+      }
+    },
+    {
+      "title": "Odriozola Landing",
+      "subtitle": "Landing Page",
+      "description": "Landing page for an electric motor repair shop, providing visibility and standing out against the competition.",
+      "link": "https://electromecanicaodriozola.com",
+      "github": "https://github.com/EBregains/taller",
+      "image": {
+        "url": "/projects/odriozola-landing/image.webp",
+        "alt": "Sample of Odriozola Landing Page, showing three open engines with their wiring inside, next to three cable coils."
+      }
+    },
+    {
+      "title": "Get Things Done",
+      "subtitle": "To Do Tracker",
+      "description": "Simple and straightforward to-do list for managing daily tasks.",
+      "link": "https://ebregains.github.io/get-things-done/",
+      "github": "https://github.com/EBregains/get-things-done",
+      "image": {
+        "url": "/projects/get-things-done/image.webp",
+        "alt": "Sample of the project GetThingsDone"
+      }
+    }
+  ],
+  "CODE": "Code",
+  "PREVIEW": "Preview",
+  "ABOUT_ME_TITLE": "About Me",
+  "ABOUT_ME_PARAGRAPH_1": "Passionate and self-taught software enthusiast, lover of learning and problem-solving. With a comprehensive and authentic approach, I aim to tackle challenges effectively and collaborate in multidisciplinary teams.",
+  "ABOUT_ME_PARAGRAPH_2": "I am currently learning German and Norwegian, seeking personal growth and openness to new cultures and experiences.",
+  "ABOUT_ME_PARAGRAPH_3": "My cheerful and resourceful nature, combined with a creative mind, drives me to find innovative and efficient solutions."
 }

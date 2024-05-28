@@ -1,8 +1,74 @@
 {
   "TITLE": "Emiliano Brégains",
   "SUBTITLE": "Desarrollador Fullstack",
-  "AVAILABLE": "Disponible!",
-  "PHARAGRAPH-HERO-1": "Trabajando hace +2 años.",
+  "AVAILABLE": "¡Disponible!",
+  "PHARAGRAPH-HERO-1": "Trabajando hace más de 2 años.",
   "PHARAGRAPH-HERO-2": "De Santa Fe, Argentina.",
-  "PHARAGRAPH-HERO-3": "Creando experiencias y productos especiales para cada cliente."
+  "PHARAGRAPH-HERO-3": "Creando experiencias y productos especiales para cada cliente.",
+  "EXPERIENCE_TITLE": "Experiencia",
+  "EXPERIENCE": [
+    {
+      "date": "Marzo 2022 – Actualidad",
+      "title": "Desarrollo Web Fullstack",
+      "company": "Freelance",
+      "description": "Construyendo y diseñando páginas web. Comenzando por el diseño y el análisis de las tecnologías adecuadas para cada caso. Llevando a cabo su desarrollo con pruebas continuas. Realizando despliegues de las mismas en la nube, comprando y asignando dominios. Garantizando su rendimiento y monitoreando su posterior desempeño para brindar el mejor producto posible.",
+      "active": true
+    },
+    {
+      "date": "Septiembre 2023 – Actualidad",
+      "title": "Diseño de Interfaces HMI y SCADA",
+      "company": "A.G.P. SRL",
+      "description": "Encargado de diseñar e implementar interfaces para paneles táctiles industriales, utilizados por operarios en planta. Dichos paneles controlan, a través de Controladores Lógicos Programables, los procesos de producción industrial de grandes fábricas.",
+      "active": true
+    },
+    {
+      "date": "Octubre 2021 – Julio 2023",
+      "title": "Au Pair – Intercambio en EE.UU.",
+      "company": "Cultural Care",
+      "description": "A cargo de coordinar y acompañar niños estadounidenses viviendo cama adentro. Lugar donde desarrollé habilidades blandas -poder de liderazgo sano, capacidad de adaptación a diferentes ambientes, empatía y pedagogía- y donde conseguí un manejo del inglés nativo.",
+      "link": "https://www.culturalcare.com.ar/se-una-au-pair/funciones-y-responsabilidades"
+    }
+  ],
+  "MORE_INFO": "Más Información",
+  "PROJECTS_TITLE": "Proyectos",
+  "PROJECTS": [
+    {
+      "title": "Odriozola Manager",
+      "subtitle": "Sistema de consultas y guardado.",
+      "description": "Base de datos interactiva, donde un taller de reparaciones de motores eléctricos almacena y utiliza información de sus trabajos y clientes.",
+      "github": "https://github.com/EBregains/bobinados-motores",
+      "image": {
+        "url": "/projects/odriozola-manager/image.webp",
+        "alt": "Muestra del proyecto Odriozola Manager, donde se ve una tabla con datos de motores. En la parte superior, filtros para ordenar y filtrar los elementos."
+      }
+    },
+    {
+      "title": "Odriozola",
+      "subtitle": "Landing Page",
+      "description": "Landing Page para un taller de reparaciones de motores eléctricos. Otorgándole visibilidad y destacándola en la competencia.",
+      "link": "https://electromecanicaodriozola.com",
+      "github": "https://github.com/EBregains/taller",
+      "image": {
+        "url": "/projects/odriozola-landing/image.webp",
+        "alt": "Muestra de la Landing Page Odriozola, donde se ven tres motores abiertos con su cableado interior. Junto a tres bobinas de cable."
+      }
+    },
+    {
+      "title": "Get Things Done",
+      "subtitle": "Tracker de tareas",
+      "description": "Lista de tareas sencilla y directa con la que trabajar, especialmente para las tareas del día.",
+      "link": "https://ebregains.github.io/get-things-done/",
+      "github": "https://github.com/EBregains/get-things-done",
+      "image": {
+        "url": "/projects/get-things-done/image.webp",
+        "alt": "Muestra del proyecto GetThingsDone"
+      }
+    }
+  ],
+  "CODE": "Código",
+  "PREVIEW": "Previsualizar",
+  "ABOUT_ME_TITLE": "Sobre mí",
+  "ABOUT_ME_PARAGRAPH_1": "Apasionado y autodidacta del mundo del software, amante del aprendizaje y la resolución de problemas. Con enfoque comprensivo y auténtico, busco abordar desafíos de manera efectiva y colaborar en equipos multidisciplinarios.",
+  "ABOUT_ME_PARAGRAPH_2": "Actualmente estoy aprendiendo alemán y noruego, en busca de crecimiento personal y apertura a nuevas culturas y experiencias.",
+  "ABOUT_ME_PARAGRAPH_3": "Mi naturaleza alegre y resolutiva, combinada con una mente creativa, me impulsa a encontrar soluciones innovadoras y eficientes."
 }
