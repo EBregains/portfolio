@@ -3,13 +3,10 @@ import NextJS from "@/icons/NextJS.astro";
 import ReactJS from "@/icons/ReactJS.astro";
 import Tailwind from "@/icons/Tailwind.astro";
 import CSS from "@/icons/CSS.astro";
-import Image from "astro/components/Image.astro";
-import GitHub from "@/icons/GitHub.astro";
-import LinkButton from "./LinkButton.astro";
-import Link from "@/icons/Link.astro";
 import Mongo from "@/icons/Mongo.astro";
 import Svelte from "@/icons/Svelte.astro";
 import { getI18N } from "@/i18n";
+import ProjectCard from "./ProjectCard.astro";
 
 const TAGS = {
   CSS: {
@@ -70,46 +67,16 @@ const PROJECTS = [
   {
     PROJECTS.map(
       ({ title, color, subtitle, description, link, github, image, tags }) => (
-        <article class="flex flex-col lg:flex-row gap-6 hover:scale-105 transition-transform">
-          <Image
-            class="rounded shadow-2xl w-full lg:w-1/2 dark:shadow-white/10"
-            src={image.url}
-            alt={image.alt}
-            width="300"
-            height="200"
-          />
-          <div class="sticky top-28 flex flex-col h-max">
-            <h3 class={`text-4xl font-semibold ${color}`}>{title}</h3>
-            <h4 class="text-2xl mb-2">{subtitle}</h4>
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p class="text-lg opacity-80">{description}</p>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  {i18n.CODE}
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  {i18n.PREVIEW}
-                </LinkButton>
-              )}
-            </footer>
-          </div>
-        </article>
+        <ProjectCard
+          title={title}
+          color={color}
+          subtitle={subtitle}
+          description={description}
+          link={link}
+          github={github}
+          image={image}
+          tags={tags}
+        />
       ),
     )
   }

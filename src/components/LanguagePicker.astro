@@ -23,7 +23,7 @@ const otherLocales = Object.values(LANGUAGES).filter(
     )
   }
   <div
-    class="group text-black rounded-md w-28 text-sm dark:text-white transition-all"
+    class="group text-black rounded-md w-14 md:w-28 text-sm dark:text-white transition-all"
   >
     <button
       type="button"
@@ -32,36 +32,23 @@ const otherLocales = Object.values(LANGUAGES).filter(
       aria-haspopup="true"
     >
       <currentLocaleData.flag />
-      {currentLocaleData.name}
+      <p class="hidden md:block">{currentLocaleData.name}</p>
+      <ul
+        class="group-hover:block group-hover:animate-fade-down group-hover:animate-duration-200 hidden text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md absolute top-0 right-6 w-full"
+      >
+        {
+          otherLocales.map((locale) => (
+            <li class="py-[2px]">
+              <a
+                class="whitespace-no-wrap inline-flex justify-start items-center px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm w-full gap-x-2"
+                href={`/${locale.code}`}
+              >
+                <locale.flag /> {locale.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </button>
-    <ul
-      class="group-hover:block group-hover:animate-fade-down group-hover:animate-duration-200 hidden text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md absolute right-6 w-full"
-    >
-      {
-        otherLocales.map((locale) => (
-          <li class="py-[2px]">
-            <a
-              class="whitespace-no-wrap inline-flex justify-start items-center px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm w-full gap-x-2"
-              href={`/${locale.code}`}
-            >
-              <locale.flag /> {locale.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
   </div>
 </div>
-
-<style>
-  .fade-in {
-    animation: fade-in 0.5s linear 0.3s forwards;
-    opacity: 0;
-  }
-
-  @keyframes fade-in {
-    to {
-      opacity: 1;
-    }
-  }
-</style>

@@ -1,10 +1,14 @@
 {
-  "TITLE": "Emiliano Brégains",
-  "SUBTITLE": "Desarrollador Fullstack",
+  "TITLE": "Hola! Soy Emiliano",
+  "SUBTITLE": [
+    "Desarrollo",
+    "Fullstack",
+    "y más."
+  ],
   "AVAILABLE": "¡Disponible!",
   "PHARAGRAPH-HERO-1": "Trabajando hace más de 2 años.",
-  "PHARAGRAPH-HERO-2": "De Santa Fe, Argentina.",
-  "PHARAGRAPH-HERO-3": "Creando experiencias y productos especiales para cada cliente.",
+  "PHARAGRAPH-HERO-2": "Desde Santa Fe, Argentina.",
+  "PHARAGRAPH-HERO-3": "Creando experiencias y productos digitales especiales para cada cliente.",
   "EXPERIENCE_TITLE": "Experiencia",
   "EXPERIENCE": [
     {

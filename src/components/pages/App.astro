@@ -18,17 +18,31 @@ const i18n = getI18N({ currentLocale });
   title="Emiliano Bregains | Desarrollador y Programador Web."
   description="Contrata a Emiliano Bregains para solucionar tus problemas y necesidades con todo el poder del software y la web."
 >
-  <main class="px-6">
-    <SectionContainer class="pt-24 pb-36 lg:pb-48" id="inicio">
+  <main class="p-2">
+    <SectionContainer
+      class="h-[84vh] mb-[4vh] p-7 px-9 animacion-inicio z-10"
+      id="inicio"
+    >
       <Home />
+      <div
+        class="backdrop-blur-sm w-[110%] h-[110%] opacity-0 absolute -top-10 right-0 blur-in"
+      >
+      </div>
     </SectionContainer>
 
-    <SectionContainer class="pt-6 mb-24 lg:mb-32" id="experiencia">
+    <SectionContainer
+      class="pt-6 mb-24 lg:mb-32 lg:scale-75 scale-up"
+      id="experiencia"
+    >
       <h2 class="font-semibold text-3xl mb-10 flex items-center gap-4">
         <Briefcase class="size-12" />
         {i18n.EXPERIENCE_TITLE}
       </h2>
-      <Experience class="ml-6" />
+      <Experience class="ml-6 backdrop-blur-xl" />
+      <div
+        class="backdrop-blur-md w-[110%] h-[110%] absolute -top-10 right-0 blur-out"
+      >
+      </div>
     </SectionContainer>
 
     <SectionContainer class="pt-6 mb-24 lg:mb-32" id="proyectos">
@@ -48,3 +62,56 @@ const i18n = getI18N({ currentLocale });
     </SectionContainer>
   </main>
 </Layout>
+
+<style is:global>
+  .animacion-inicio {
+    will-change: transform;
+    animation: linear 1s home forwards;
+    animation-timeline: scroll();
+    animation-range: 0vh 65vh;
+  }
+  .scale-up {
+    backface-visibility: hidden;
+    animation: ease-in-out scale-up forwards;
+    animation-timeline: scroll();
+    animation-range: 0vh 60vh;
+  }
+  @media (min-width: 1100px) {
+    .animacion-inicio {
+      animation-range: 0vh 85vh;
+    }
+    .scale-up {
+      animation-range: 0vh 80vh;
+    }
+  }
+
+  @keyframes home {
+    30% {
+      transform: translate3d(-5vw, 30vh, 0);
+    }
+    to {
+      transform: translate3d(-100vw, 100vh, 0);
+    }
+  }
+
+  @keyframes scale-up {
+    to {
+      transform: scale(1);
+    }
+  }
+  .blur-out {
+    will-change: opacity;
+    animation: ease-in-out blur-out forwards;
+    animation-timeline: scroll();
+    animation-range: 30vh 80vh;
+  }
+  @keyframes blur-out {
+    50% {
+      transform: scaleY(100%);
+    }
+    to {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+  }
+</style>

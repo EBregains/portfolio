@@ -1,6 +1,10 @@
 {
-  "TITLE": "Emiliano Brégains",
-  "SUBTITLE": "Fullstack Developer",
+  "TITLE": "Hi! I'm Emiliano",
+  "SUBTITLE": [
+    "Fullstack",
+    "Developer",
+    "and more."
+  ],
   "AVAILABLE": "Available!",
   "PHARAGRAPH-HERO-1": "Working for over 2 years.",
   "PHARAGRAPH-HERO-2": "From Santa Fe, Argentina.",

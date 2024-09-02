@@ -1,0 +1,11 @@
+---
+import Corner from "@/icons/Corner.astro";
+---
+
+<a href={Astro.props.href} class="flex pl-1 border-[1px] justify-between">
+  {Astro.props.title}
+  <div class="flex justify- items-center size-4 relative">
+    <div class="w-4 h-1 bg-white"></div>
+    <div class="w-1 h-4 bg-white"></div>
+  </div>
+</a>

@@ -8,38 +8,51 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header class="sticky top-0 sm:top-4 m-0 sm:m-4 rounded-lg z-50">
+<header class="sticky top-0 m-0 rounded-lg z-50 bg-gray-50 dark:bg-neutral-900">
   <div
-    class="flex justify-between items-center px-5 py-2 w-full xl:px-0 lg:w-[980px] mx-auto"
+    class="flex justify-between items-center px-5 h-[12vh] w-full xl:px-0 lg:w-[1200px] mx-auto"
   >
-    <div class="inline-flex gap-x-1 sm:gap-x-5 md:gap-x-8">
-      <Logo class="w-6 h-auto" />
-      <nav
-        class="flex flex-col gap-x-1 py-1 sm:flex-row md:gap-x-4 lg:gap-x-10"
+    <div class="flex items-center gap-2">
+      <p
+        class="font-black relative z-20 text-xl md:text-2xl lg:text-3xl uppercase light: dark:text-white"
       >
+        Emiliano Bregains
+      </p>
+    </div>
+    <div
+      class="inline-flex items-center justify-between gap-x-1 sm:gap-x-2 md:gap-x-3 lg:gap-x-4"
+    >
+      <nav
+        class="hidden lg:flex flex-col relative flex-1 gap-x-1 py-1 sm:flex-row md:gap-x-4 lg:gap-x-10"
+      >
+        <!-- <div
+          id="ball"
+          class="hidden lg:block absolute top-[25%] -left-32 size-6 opacity-0 bg-yellow-500 dark:bg-yellow-700 rounded-full"
+        >
+        </div> -->
         <a
-          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
+          class="relative block font-light px-4 py-0 sm:py-2 rounded-full transition dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
           aria-label="experiencia"
           href="#experiencia"
         >
           {t(`nav.experiencia`)}
         </a>
         <a
-          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
+          class="relative block font-light px-4 py-0 sm:py-2 rounded-full transition dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
           aria-label="proyectos"
           href="#proyectos"
         >
           {t(`nav.proyectos`)}
         </a>
         <a
-          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
+          class="relative block font-light px-4 py-0 sm:py-2 rounded-full transition dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
           aria-label="sobre-mi"
           href="#sobre-mi"
         >
           {t(`nav.sobre-mi`)}
         </a>
         <a
-          class="relative block font-medium px-2 py-0 sm:py-2 transition text-black/80 dark:text-white/80 hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
+          class="relative block font-light px-4 py-0 sm:py-2 rounded-full transition dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 fade-in"
           aria-label="contacto"
           href="https://www.linkedin.com/in/ebregains/"
         >
@@ -54,75 +67,42 @@ const t = useTranslations(lang);
   </div>
 </header>
 
-<script is:inline>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("header div nav a");
-
-    const callback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500");
-              item.classList.add("dark:text-yellow-500");
-              item.classList.add("font-semibold");
-              item.classList.add("text-xl");
-            } else {
-              item.classList.remove("text-yellow-500");
-              item.classList.remove("dark:text-yellow-500");
-              item.classList.remove("font-semibold");
-              item.classList.remove("text-xl");
-            }
-          });
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.2,
-    });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    };
-  });
-</script>
-
 <style>
-  header {
-    animation: blur-bg 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0px 300px;
-  }
-
-  @keyframes blur-bg {
-    to {
-      @apply backdrop-blur-xl bg-black/10 shadow-lg;
-    }
-  }
-
   .fade-in {
-    animation: fade-in 0.5s linear forwards;
+    animation: fade-in 0.5s 1.5s linear forwards;
     opacity: 0;
   }
 
   @keyframes fade-in {
     to {
       opacity: 1;
+    }
+  }
+
+  #ball {
+    animation: ball linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0vh 600vh;
+  }
+
+  @keyframes ball {
+    20% {
+      opacity: 1;
+      left: 11vw;
+      background:;
+    }
+    35% {
+      opacity: 1;
+      left: 11vw;
+      background:;
+    }
+    50% {
+      left: 13vw;
+    }
+    75% {
+      left: 82vw;
+    }
+    to {
     }
   }
 </style>

@@ -7,69 +7,149 @@ import SocialPill from "./SocialPill.astro";
 import Image from "astro/components/Image.astro";
 import Sparkles from "@/icons/Sparkles.astro";
 import { getI18N } from "@/i18n";
+import Corner from "@/icons/Corner.astro";
+import MainButton from "./MainButton.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<div
-  class="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-x-12"
->
-  <a
+<Corner class="absolute top-0 left-0" />
+<Corner
+  class="absolute top-20 left-20 origin-bottom-right -rotate-180 expand-tbr"
+/>
+<Corner
+  class="absolute top-20 left-0 -rotate-90 origin-bottom-left expand-tbl"
+/>
+<Corner
+  class="absolute top-0 left-20 rotate-90 origin-bottom-right expand-ttr"
+/>
+<div class="opacity-0 transition-opacity appear">
+  <h2
+    class="text-4xl uppercase font-black text-yellow-500 md:text-6xl lg:text-7xl leading-none dark:text-yellow-400"
+  >
+    {i18n.SUBTITLE[0]}
+    <span class="text-4xl block -mt-1 lg:-mt-3 lg:text-6xl"
+      >{i18n.SUBTITLE[1]}
+      <span
+        class="text-2xl text-yellow-700 appear dark:text-yellow-300/70 lg:text-5xl"
+        >{i18n.SUBTITLE[2]}</span
+      ></span
+    >
+  </h2>
+  <h3
+    class="dark:opacity-80 text-base lg:text-lg font-light max-w-[700px] pr-2"
+  >
+    <span>
+      {i18n["PHARAGRAPH-HERO-1"]}
+    </span>
+  </h3>
+  <div
+    class="tesxt-sm lg:text-base w-60 lg:w-48 p-4 lg:p-8 word-spacing text-justify mt-3 lg:mt-28 lg:ml-40 border-[1px] border-black dark:border-white"
+  >
+    <span class="dark:opacity-80">
+      {i18n["PHARAGRAPH-HERO-3"]}
+      {i18n["PHARAGRAPH-HERO-2"]}
+    </span>
+  </div>
+
+  <!-- <nav class="flex gap-4 flex-wrap">
+    <SocialPill href="https://www.linkedin.com/in/ebregains/">
+      <LinkedIn class="size-4 md:size-5 lg:size-6" />
+      LinkedIn
+    </SocialPill>
+
+    <SocialPill href="https://github.com/EBregains">
+      <GitHub class="size-4 md:size-5 lg:size-6" />
+      GitHub
+    </SocialPill>
+
+    <SocialPill href="mailto:ebregains@gmail.com">
+      <Mail class="size-4 md:size-5 lg:size-6" />
+      @ebregains
+    </SocialPill>
+  </nav> -->
+</div>
+<!-- <a
     href="https://www.linkedin.com/in/ebregains/"
     target="_blank"
     rel="noopener"
-    class="flex lg:flex-col lg:flex-1 gap-4 mb-4 lg:mb-0 items-center w-max md:hover:scale-105 transition"
-  >
-    <div
-      class="absolute ml-28 lg:mt-3 lg:ml-40 flex items-center md:justify-center md:hover:scale-105 transition"
+    class="flex lg:flex-col lg:flex-1 gap-4 mb-4 lg:mb-0 items-center w-max"
+  > -->
+<!-- <div
+      class="absolute ml-28 lg:mt-3 lg:ml-40 flex z-10 items-center md:justify-center md:hover:scale-105 transition"
     >
       <Badge>
         <Sparkles class="mr-2 size-4" />{i18n.AVAILABLE}
       </Badge>
-    </div>
-    <Image
-      src="https://github.com/ebregains.png"
-      class="rounded-full size-32 lg:size-64 lg:shadow-lg hover:shadow-2xl dark:shadow-white/10"
-      alt="emi logo"
-      width={300}
-      height={300}
-      loading={"eager"}
-    />
-  </a>
-  <div class="w-full lg:w-3/5">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 flex gap-x-4">
-      {i18n.TITLE}
-    </h1>
-    <h2
-      class="mb-4 text-xl font-semibold text-yellow-500 md:text-2xl lg:text-3xl lg:mb-5 dark:text-yellow-300"
-    >
-      {i18n.SUBTITLE}
-      <!-- <span class="text-yellow-300/70"> y más.</span> -->
-    </h2>
-    <h3 class="text-lg text-balance mb-6 max-w-[700px] pr-2">
-      <span>{i18n["PHARAGRAPH-HERO-1"]}</span>
-      <span class="text-purple-800 dark:text-purple-300">
-        {i18n["PHARAGRAPH-HERO-2"]}</span
-      >
-      <span class="opacity-80"> {i18n["PHARAGRAPH-HERO-3"]}</span>
-    </h3>
+    </div> -->
+<Image
+  src="/assets/image (11).webp"
+  class="size-48 lg:size-72 absolute bottom-8 right-10 lg:bottom-20 lg:right-28 opacity-0 appear lg:shadow-lg shadow-gray-800 dark:shadow-gray-900"
+  alt="emi logo"
+  width={480}
+  height={620}
+  loading={"eager"}
+/>
+<!-- </a> -->
 
-    <nav class="flex gap-4 flex-wrap">
-      <SocialPill href="https://www.linkedin.com/in/ebregains/">
-        <LinkedIn class="size-4 md:size-5 lg:size-6" />
-        LinkedIn
-      </SocialPill>
+<style is:global>
+  .guitar-mask {
+  }
+  @media (min-width: 1024px) {
+    .guitar-mask {
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      mask-image: url(/masks/guitar.png);
+      -webkit-mask-image: url(/masks/guitar.png);
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+  }
 
-      <SocialPill href="https://github.com/EBregains">
-        <GitHub class="size-4 md:size-5 lg:size-6" />
-        GitHub
-      </SocialPill>
+  .word-spacing {
+    word-spacing: -2px;
+  }
 
-      <SocialPill href="mailto:ebregains@gmail.com">
-        <Mail class="size-4 md:size-5 lg:size-6" />
-        @ebregains
-      </SocialPill>
-    </nav>
-  </div>
-</div>
+  .expand-ttr {
+    animation: ttr 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1s forwards;
+  }
+
+  .expand-tbl {
+    animation: tbl 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1s forwards;
+  }
+  .expand-tbr {
+    animation: tbr 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1s forwards;
+  }
+
+  .appear {
+    animation: appear 0.5s linear forwards 1.5s;
+  }
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes ttr {
+    to {
+      left: 100%;
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes tbl {
+    to {
+      top: 100%;
+      transform: rotate(-90deg);
+    }
+  }
+
+  @keyframes tbr {
+    to {
+      top: 100%;
+      left: 100%;
+      transform: rotate(-180deg);
+    }
+  }
+</style>

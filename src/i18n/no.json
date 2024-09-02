@@ -1,6 +1,10 @@
 {
-  "TITLE": "Emiliano Brégains",
-  "SUBTITLE": "Fullstack Utvikler",
+  "TITLE": "Hallo! Jeg heter Emi",
+  "SUBTITLE": [
+    "Fullstack",
+    "Utvikler",
+    "og mer."
+  ],
   "AVAILABLE": "Åpen for jobb!",
   "PHARAGRAPH-HERO-1": "Jobber for +2 år siden.",
   "PHARAGRAPH-HERO-2": "Fra Santa Fe, Argentina.",

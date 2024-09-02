@@ -1,6 +1,10 @@
 {
   "TITLE": "Emiliano Brégains",
-  "SUBTITLE": "Fullstack-Entwickler",
+  "SUBTITLE": [
+    "Fullstack",
+    "Entwickler",
+    "und mer."
+  ],
   "AVAILABLE": "Offen für Arbeit!",
   "PHARAGRAPH-HERO-1": "Arbeitet seit +2 Jahren.",
   "PHARAGRAPH-HERO-2": "Aus Santa Fe, aus Argentinien.",

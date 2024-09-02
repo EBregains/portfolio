@@ -1,0 +1,61 @@
+---
+import GitHub from "@/icons/GitHub.astro";
+import Link from "@/icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+let { title, color, subtitle, description, link, github, image, tags } =
+  Astro.props;
+---
+
+<article
+  class="flex flex-col lg:flex-row gap-6 hover:scale-105 transition-transform"
+>
+  <img
+    class="rounded shadow-xl shadow-gray-300/50 w-full lg:w-1/2 dark:shadow-neutral-700/10"
+    src={image.url as string}
+    alt={image.alt as string}
+    width="300"
+    height="200"
+  />
+  <div class="sticky top-28 flex flex-col h-max">
+    <h3 class={`text-4xl font-semibold ${color}`}>{title}</h3>
+    <h4 class="text-2xl mb-2">{subtitle}</h4>
+    <ul class="flex flex-row mb-2 gap-x-2">
+      {
+        tags.map((tag: { class: string; icon: any; name: string }) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-lg opacity-80">{description}</p>
+    <footer class="flex items-end justify-start mt-4 gap-x-4">
+      {
+        github && (
+          <LinkButton href={github}>
+            <GitHub class="size-6" />
+            {i18n.CODE}
+          </LinkButton>
+        )
+      }
+      {
+        link && (
+          <LinkButton href={link}>
+            <Link class="size-4" />
+            {i18n.PREVIEW}
+          </LinkButton>
+        )
+      }
+    </footer>
+  </div>
+</article>
